@@ -17,7 +17,22 @@ import {
 } from "./Components/Icon";
 
 const App = () => {
-  const API_KEY = "53ed5cf255f029fa4cfe549609e42413";
+  const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
+
+  // Check if API key is available
+  if (!API_KEY) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold mb-4">Configuration Error</h1>
+          <p className="mb-4">OpenWeatherMap API key is not configured.</p>
+          <p className="text-sm text-gray-400">
+            Please create a .env file with VITE_WEATHER_API_KEY=your_api_key
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   const [weather, setWeather] = useState(null);
   const [city, setCity] = useState("");
