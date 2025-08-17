@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://CodeInk-01.github.io/WeatherApp",
+  "homepage": "https://CodeInk-01.github.io/WeatherApp/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
